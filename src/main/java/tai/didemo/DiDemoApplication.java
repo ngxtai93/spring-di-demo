@@ -3,7 +3,10 @@ package tai.didemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import tai.didemo.controller.ConstructorInjectedController;
 import tai.didemo.controller.MyController;
+import tai.didemo.controller.PropertyInjectedController;
+import tai.didemo.controller.SetterInjectedController;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -13,5 +16,10 @@ public class DiDemoApplication {
 		MyController controller = (MyController) context.getBean("myController");
 
 		controller.hello();
+
+		System.out.println(context.getBean(PropertyInjectedController.class).sayHello());
+		System.out.println(context.getBean(SetterInjectedController.class).sayHello());
+		System.out.println(context.getBean(ConstructorInjectedController.class).sayHello());
+
 	}
 }
