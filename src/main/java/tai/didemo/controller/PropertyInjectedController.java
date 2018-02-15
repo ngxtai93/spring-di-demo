@@ -8,9 +8,11 @@ import tai.didemo.services.GreetingService;
 public class PropertyInjectedController {   // Not recommended
 
     @Autowired
-    public GreetingService greetingService;
+//    public GreetingServiceImpl greetingService;   Use Impl class directly
+//    or
+    public GreetingService greetingServiceImpl;
 
     public String sayHello() {
-        return greetingService.sayGreeting();
+        return greetingServiceImpl.sayGreeting();
     }
 }
