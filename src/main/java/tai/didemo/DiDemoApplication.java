@@ -7,6 +7,7 @@ import tai.didemo.controller.ConstructorInjectedController;
 import tai.didemo.controller.MyController;
 import tai.didemo.controller.PropertyInjectedController;
 import tai.didemo.controller.SetterInjectedController;
+import tai.didemo.examplebeans.FakeDataSource;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -15,10 +16,9 @@ public class DiDemoApplication {
 		ApplicationContext context = SpringApplication.run(DiDemoApplication.class, args);
 		MyController controller = (MyController) context.getBean("myController");
 
-		System.out.println(controller.hello());
-		System.out.println(context.getBean(PropertyInjectedController.class).sayHello());
-		System.out.println(context.getBean(SetterInjectedController.class).sayHello());
-		System.out.println(context.getBean(ConstructorInjectedController.class).sayHello());
+		FakeDataSource fakeDataSource = (FakeDataSource) context.getBean(FakeDataSource.class);
+
+		System.out.println(fakeDataSource.getUser());
 
 	}
 }
