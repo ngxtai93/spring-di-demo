@@ -10,11 +10,6 @@ import tai.didemo.examplebeans.FakeDataSource;
 import tai.didemo.examplebeans.FakeJmsBroker;
 
 @Configuration
-//@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
 public class PropertyConfig {
 
     @Value("${tai.username}")
@@ -47,10 +42,5 @@ public class PropertyConfig {
         fakeJmsBroker.setUrl(jmsUrl);
         return fakeJmsBroker;
     }
-
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
-    }
+    
 }
