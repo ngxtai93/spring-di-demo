@@ -8,6 +8,7 @@ import tai.didemo.controller.MyController;
 import tai.didemo.controller.PropertyInjectedController;
 import tai.didemo.controller.SetterInjectedController;
 import tai.didemo.examplebeans.FakeDataSource;
+import tai.didemo.examplebeans.FakeJmsBroker;
 
 @SpringBootApplication
 public class DiDemoApplication {
@@ -19,6 +20,9 @@ public class DiDemoApplication {
 		FakeDataSource fakeDataSource = (FakeDataSource) context.getBean(FakeDataSource.class);
 
 		System.out.println(fakeDataSource.getUser());
+
+		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) context.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUsername());
 
 	}
 }
