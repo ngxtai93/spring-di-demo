@@ -3,3 +3,13 @@ tai:
     username: JMS Username
     password: somepass
     url: SomeURL
+
+---
+
+spring:
+  profiles: de
+tai:
+  jms:
+    username: JMS Username DE
+    password: somepass
+    url: SomeURL
