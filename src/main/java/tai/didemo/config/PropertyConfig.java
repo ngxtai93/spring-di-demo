@@ -42,5 +42,5 @@ public class PropertyConfig {
         fakeJmsBroker.setUrl(jmsUrl);
         return fakeJmsBroker;
     }
-    
+
 }
